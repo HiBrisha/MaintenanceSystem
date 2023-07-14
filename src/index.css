@@ -9,10 +9,29 @@
   text-rendering: optimizeLegibility;
 
   /*color use to design*/
-  --header-color: #2264D1;
+  --header-color: #2264d1;
   --nav-color: #2979ff;
+  --dark-think-color: #333333;
+
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }

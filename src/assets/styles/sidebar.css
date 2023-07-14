@@ -1,0 +1,137 @@
+/*
+---Title: Sidebar Style
+---Author: Hieu Nguyen Minh
+---Description: Custom Sidebar style
+---Edited at: 9:00AM 23_07_14
+*/
+
+/*<Format layout Sidebar>*/
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: var(--nav-color);
+  transition: var(--tran-05);
+}
+
+/*<Format layout header/>*/
+.sidebar header {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  background-color: var(--header-color);
+  padding: 5px;
+  color: #fff;
+}
+
+.sidebar header .toggle-button {
+  position: absolute;
+  top: 0;
+  right: -12px;
+  height: 25px;
+  width: 25px;
+  background-color: var(--dark-think-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(50%);
+  transition: var(--tran-05);
+}
+/*<Format layout header/>*/
+
+/*<Format layout menu-bar>*/
+.sidebar .menu-bar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+/*<Format layout search-box>*/
+.sidebar .menu-bar .search-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.sidebar .menu-bar .search-box input {
+  width: calc(100% - 20px);
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+/*<Format layout search-box/>*/
+
+/*<Format layout menu-page>*/
+.sidebar .menu-bar .menu-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.sidebar .menu-bar .menu-page .active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.sidebar .menu-bar .menu-page .nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-style: bold;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.sidebar .menu-bar .menu-page .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .menu-bar .menu-page .nav-link a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.sidebar .menu-bar .menu-page li a span {
+  margin-left: 10px;
+}
+/*<Format layout menu-page/>*/
+
+/*<Format layout menu-bar/>*/
+
+/*<Format layout Sidebar/>*/
+
+/*<Format layout Sidebar-Close>*/
+.sidebar.close {
+  width: 60px;
+  transition: var(--tran-05);
+}
+
+.sidebar.close .toggle-button {
+  transform: translateY(50%) rotate(180deg);
+}
+
+.sidebar.close .search-box input {
+  display: none;
+}
+
+.sidebar.close .menu-bar .menu-page li a span {
+  display: none;
+}
+
+.sidebar.close .menu-bar .menu-page .nav-link {
+  justify-content: center;
+}
+
+/*<Format layout Sidebar-Close/>*/
