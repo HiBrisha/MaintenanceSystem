@@ -33,7 +33,7 @@ const TreeNode = ({ node }) => {
         </li>
       </li>
       {expanded && !isLeafNode && (
-        <ul>
+        <ul className="child">
           {node.children.map((childNode) => (
             <TreeNode key={childNode.ASSETID} node={childNode} />
           ))}
@@ -46,8 +46,8 @@ const TreeNode = ({ node }) => {
 const TreeView = ({ data }) => {
   return (
     <div className="treeview">
-      {data.map((node) => (
-        <TreeNode key={node.ASSETID} node={node} />
+      {data.parents.map((parentNode) => (
+        <TreeNode key={parentNode.ASSETID} node={parentNode} />
       ))}
     </div>
   );
@@ -56,29 +56,220 @@ const TreeView = ({ data }) => {
 // Sử dụng TreeView trong ứng dụng
 export const FolderTree = () => {
   const treeData = {
-    ASSETID: "EVNDTNC",
-    ASSETID_PARENT: null,
-    ASSETID_ORG: "DTNC",
-    ASSETDESC: "Thiết bị phục vụ nghiên cứu, đào tạo",
-    children: [
+    parents: [
       {
-        ASSETID: "GAVU.22651",
-        ASSETID_PARENT: "EVNDTNC",
-        ASSETID_ORG: "DTNC.1",
-        ASSETDESC: "Bàn thực hành thí nghiệm rơ le",
-        children: [],
+        ASSETID: "EVNDTNC",
+        ASSETID_PARENT: null,
+        ASSETID_ORG: "DTNC",
+        ASSETDESC: "Thiết bị phục vụ nghiên cứu, đào tạo",
+        children: [
+          {
+            ASSETID: "GAVU.22651",
+            ASSETID_PARENT: "EVNDTNC",
+            ASSETID_ORG: "DTNC.1",
+            ASSETDESC: "Bàn thực hành thí nghiệm rơ le",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.22652",
+            ASSETID_PARENT: "EVNDTNC",
+            ASSETID_ORG: "DTNC.2",
+            ASSETDESC: "Mô hình đào tạo thực hành tự động",
+            children: [],
+          },
+        ],
       },
       {
-        ASSETID: "GAVU.22652",
-        ASSETID_PARENT: "EVNDTNC",
-        ASSETID_ORG: "DTNC.2",
-        ASSETDESC: "Mô hình đào tạo thực hành tự động",
+        ASSETID: "GAVU.14467",
+        ASSETID_PARENT: null,
+        ASSETID_ORG: "AV.XD",
+        ASSETDESC: "PHẦN XÂY DỰNG",
         children: [
           {
             ASSETID: "GAVU.14468",
             ASSETID_PARENT: "GAVU.14467",
             ASSETID_ORG: "AV.XD.HC",
             ASSETDESC: "Hồ chứa",
+            children: [
+              {
+                ASSETID: "GAVU.22041",
+                ASSETID_PARENT: "GAVU.14468",
+                ASSETID_ORG: "AV.XD.HC.01",
+                ASSETDESC: "Hồ A Vương",
+                children: [],
+              },
+            ],
+          },
+          {
+            ASSETID: "GAVU.14469",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.HTTPQT",
+            ASSETDESC: "Hệ thống thiết bị quan trắc",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14470",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.DT",
+            ASSETDESC: "Đập tràn",
+            children: [
+              {
+                ASSETID: "GAVU.14471",
+                ASSETID_PARENT: "GAVU.14470",
+                ASSETID_ORG: "AV.XD.DT.01",
+                ASSETDESC: "Thân đập",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14472",
+                ASSETID_PARENT: "GAVU.14470",
+                ASSETID_ORG: "AV.XD.DT.02",
+                ASSETDESC: "Công trình tiêu năng",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14473",
+                ASSETID_PARENT: "GAVU.14470",
+                ASSETID_ORG: "AV.XD.DT.03",
+                ASSETDESC: "Cửa xả tràn",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14474",
+                ASSETID_PARENT: "GAVU.14470",
+                ASSETID_ORG: "AV.XD.DT.04",
+                ASSETDESC: "Nhà vận hành đập",
+                children: [],
+              },
+            ],
+          },
+          {
+            ASSETID: "GAVU.14475",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.CNN",
+            ASSETDESC: "Cửa nhận nước",
+            children: [
+              {
+                ASSETID: "GAVU.14476",
+                ASSETID_PARENT: "GAVU.14475",
+                ASSETID_ORG: "AV.XD.CNN.01",
+                ASSETDESC: "Cầu công tác",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14477",
+                ASSETID_PARENT: "GAVU.14475",
+                ASSETID_ORG: "AV.XD.CNN.02",
+                ASSETDESC: "Nhà vận hành cửa nhận nước",
+                children: [],
+              },
+            ],
+          },
+          {
+            ASSETID: "GAVU.14478",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.DHDN",
+            ASSETDESC: "Đường hầm dẫn nước",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14479",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.TDA",
+            ASSETDESC: "Tháp điều áp",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14480",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.NV",
+            ASSETDESC: "Nhà van",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14481",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.T220",
+            ASSETDESC: "Trạm 220kV",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14482",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.DOAL",
+            ASSETDESC: "Đường ống áp lực",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14483",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.NM",
+            ASSETDESC: "Nhà máy Thủy điện A Vương",
+            children: [
+              {
+                ASSETID: "GAVU.14484",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.01",
+                ASSETDESC: "Cao trình 87",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14485",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.02",
+                ASSETDESC: "Cao trình 80",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14486",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.03",
+                ASSETDESC: "Cao trình 74",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14487",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.04",
+                ASSETDESC: "Cao trình 62",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14488",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.05",
+                ASSETDESC: "Cao trình 57",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14489",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.06",
+                ASSETDESC: "Cao trình 52.5",
+                children: [],
+              },
+              {
+                ASSETID: "GAVU.14490",
+                ASSETID_PARENT: "GAVU.14483",
+                ASSETID_ORG: "AV.XD.NM.07",
+                ASSETDESC: "Cao trình 46.7",
+                children: [],
+              },
+            ],
+          },
+          {
+            ASSETID: "GAVU.14491",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.KX",
+            ASSETDESC: "Kênh xả hạ lưu",
+            children: [],
+          },
+          {
+            ASSETID: "GAVU.14492",
+            ASSETID_PARENT: "GAVU.14467",
+            ASSETID_ORG: "AV.XD.KVT",
+            ASSETDESC: "Kho vật tư lắp máy",
+            children: [],
           },
           {
             ASSETID: "GAVU.14493",
@@ -185,9 +376,5 @@ export const FolderTree = () => {
     ],
   };
 
-  return (
-    <div>
-      <TreeView data={[treeData]} />
-    </div>
-  );
+  return <TreeView data={treeData} />;
 };

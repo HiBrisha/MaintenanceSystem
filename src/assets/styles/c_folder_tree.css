@@ -1,5 +1,5 @@
 .treeview {
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -17,7 +17,7 @@
 }
 
 .truncate:not(:has(.button-container)) {
-  transform: translateX(10px) translateY(5px);
+  transform: translateX(13px) translateY(5px);
 }
 
 .truncate:not(:has(.button-container)) .line {
@@ -34,11 +34,14 @@
   align-items: center;
 }
 
-.truncate .connection .desc{
+.truncate .connection .desc {
+  width: 150px;
   margin-left: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.button-container button{
+.button-container button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,26 +53,49 @@
 }
 
 .line {
-  width: 25px;
+  width: 20px;
   height: 2px;
   background-color: #000;
   margin-right: 5px;
 }
 
-.treeview ul ul ul.root::before {
+.treeview ul > ul.root:not(:first-child)::after {
   content: "";
   position: absolute;
-  top: -10px;
-  left: 41px;
-  height: 33px;
-  width: 2px;
+  top: -20px;
+  left: 0;
+  height: calc(100% + 45px);
   border-left: 2px solid #000;
-  transform: translateY(5px);
 }
 
-.treeview ul ul ul.root:last-child:before {
-  height: 23px;
-  left: 40px;
-  border-right: 2px solid #000;
-  border-left: none;
+.treeview ul > ul.root:first-child:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 51px;
+  border-left: 2px solid #000;
+}
+
+.treeview ul > ul.root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 44px;
+  height: 51px;
+  width: 2px;
+  border-left: 2px solid #000;
+}
+
+.treeview ul > ul.root:first-child:before {
+  top: -2px;
+  height: calc(100% + 15px);
+  border-left: 2px solid #000;
+}
+
+.treeview ul > ul.root:last-child:before {
+  height: 16px;
+  top: -5px;
+  border-left: 2px solid #000;
+  transform: translateY(5px);
 }
