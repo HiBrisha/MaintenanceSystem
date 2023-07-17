@@ -12,6 +12,7 @@
   --header-color: #2264d1;
   --nav-color: #2979ff;
   --dark-think-color: #333333;
+  --main-border-color: #777777;
 
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
@@ -22,6 +23,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow: hidden;
 }
 
 nav {
@@ -34,4 +36,8 @@ nav {
 
 a {
   text-decoration: none;
+}
+
+ul{
+  list-style: none;
 }

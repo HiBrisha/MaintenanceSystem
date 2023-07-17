@@ -1,0 +1,27 @@
+/*================****==================
+Title: Home Page Layout
+Author: Hieu Nguyen Minh
+================****==================*/
+
+/*============ format layout ================*/
+.main-container {
+  width: calc(100vw - 201px);
+  height: calc(100vh - 60px);
+  transform: translateX(200px) translateY(60px);
+  transition: var(--tran-05);
+  z-index: 2;
+}
+
+.main-container.close {
+  width: calc(100vw - 61px);
+  transform: translateX(60px) translateY(60px);
+  transition: var(--tran-05);
+}
+/*================****==================*/
+
+.folder-tree {
+  height: calc(100vh - 60px);
+  border-right: 2px solid var(--main-border-color);
+  overflow-y: auto;
+  
+}

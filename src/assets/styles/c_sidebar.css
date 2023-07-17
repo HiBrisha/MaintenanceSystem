@@ -11,6 +11,8 @@
   height: 100vh;
   background-color: var(--nav-color);
   transition: var(--tran-05);
+  position: fixed;
+  z-index: 2;
 }
 
 /*<Format layout header/>*/
@@ -116,6 +118,10 @@
 .sidebar.close {
   width: 60px;
   transition: var(--tran-05);
+}
+
+.sidebar.close header{
+  padding: 10px;
 }
 
 .sidebar.close .toggle-button {

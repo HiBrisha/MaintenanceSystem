@@ -17,10 +17,14 @@ const navElement = createRoot(document.getElementById("general-nav"));
 //hàm thay đổi gia tri
 const changeState = () => {
   const headerClass = document.getElementById("main-header");
+  const mainContainerClass = document.getElementById("main");
   sidebar_state = !sidebar_state;
   sidebar_state
-    ? headerClass.classList.remove("close")
-    : headerClass.classList.toggle("close");
+    ? (headerClass.classList.remove("close"),
+    mainContainerClass.classList.remove("close"))
+    : (headerClass.classList.toggle("close"),
+    mainContainerClass.classList.toggle("close"))
+
 };
 
 //render noi dung header
