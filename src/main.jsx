@@ -7,14 +7,14 @@ import { Sidebar } from "./component/sidebar.jsx";
 import { Login } from "./pages/login-page.jsx";
 import "bootstrap/dist/css//bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import"./utils/i18n"
 import "./index.css";
 
 //khai bao cac element
 let sidebar_state = true;
-const rootElement = createRoot(document.getElementById("root"));
+const rootElement = createRoot(document.getElementById("main"));
 const headerElement = createRoot(document.getElementById("general-header"));
 const navElement = createRoot(document.getElementById("general-nav"));
-const loginElement = createRoot(document.getElementById("login"));
 
 //hàm thay đổi gia tri
 const changeState = () => {
@@ -46,12 +46,5 @@ navElement.render(
 rootElement.render(
   <Router>
     <App />
-  </Router>
-);
-
-//Render login
-loginElement.render(
-  <Router>
-    <Login />
   </Router>
 );

@@ -4,9 +4,9 @@ import logo from "../assets/images/root.png";
 
 export const Login = () => {
   return (
-    <section className="dark:bg-gray-900">
+    <section className="row login dark:bg-gray-900 p-0 m-0">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="col-lg-4 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="w-full flex justify-center">
               <img src={logo} alt="" srcset="" />

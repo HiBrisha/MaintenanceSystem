@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 :root {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
@@ -43,19 +41,4 @@ a {
 
 ul {
   list-style: none;
-}
-
-#login {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/images/background_login.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
 }
