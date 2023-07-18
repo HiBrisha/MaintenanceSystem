@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { App } from "./App.jsx";
 import { Header } from "./component/header.jsx";
 import { Sidebar } from "./component/sidebar.jsx";
+import { Login } from "./pages/login-page.jsx";
 import "bootstrap/dist/css//bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "./index.css";
@@ -13,6 +14,7 @@ let sidebar_state = true;
 const rootElement = createRoot(document.getElementById("root"));
 const headerElement = createRoot(document.getElementById("general-header"));
 const navElement = createRoot(document.getElementById("general-nav"));
+const loginElement = createRoot(document.getElementById("login"));
 
 //hàm thay đổi gia tri
 const changeState = () => {
@@ -21,10 +23,9 @@ const changeState = () => {
   sidebar_state = !sidebar_state;
   sidebar_state
     ? (headerClass.classList.remove("close"),
-    mainContainerClass.classList.remove("close"))
+      mainContainerClass.classList.remove("close"))
     : (headerClass.classList.toggle("close"),
-    mainContainerClass.classList.toggle("close"))
-
+      mainContainerClass.classList.toggle("close"));
 };
 
 //render noi dung header
@@ -45,5 +46,12 @@ navElement.render(
 rootElement.render(
   <Router>
     <App />
+  </Router>
+);
+
+//Render login
+loginElement.render(
+  <Router>
+    <Login />
   </Router>
 );
